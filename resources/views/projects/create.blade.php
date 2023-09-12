@@ -4,6 +4,8 @@
 
 @section('content')
 
+<x-app-layout>
+
     <h2 style="text-align: center; font-size: 50px; margin-top: 5%;">Cadastrar Projeto</h2>
 
     <form style="width: 40%; margin: auto; margin-top: 5%;" method="POST" action="/project">
@@ -17,21 +19,29 @@
             <input type="text" class="form-control" id="projectDescription" name="projectDescription">
         </div>
 
-            <div class="col-md-4">
+        <div style="display: flex; justify-content: space-between">
+
+            <div class="col-md-2">
                 <label for="inputEmail4" class="form-label">Gravidade (G)</label>
                 <input type="number" class="form-control" id="inputEmail4" value="0" max="5" min="0" name="g">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="inputEmail4" class="form-label">Urgência (U)</label>
                 <input type="number" class="form-control" id="inputEmail4" value="0" max="5" min="0" name="u">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="inputEmail4" class="form-label">Tendência (T)</label>
                 <input type="number" class="form-control" id="inputEmail4" value="0" max="5" min="0" name="t">
             </div>
+        </div>  
+
+        <br/>
             
-            
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #0d6efd; color: white;">Cadastrar</button>
     </form>
+
+    
+
+</x-app-layout>
 
 @endsection

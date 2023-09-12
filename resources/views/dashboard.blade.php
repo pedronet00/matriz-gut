@@ -49,7 +49,7 @@
 
 
 
- <div id="generic_price_table">   
+ <div id="generic_price_table" style="background-color: #f3f4f6;">   
         <section>
         
         <div class="container">

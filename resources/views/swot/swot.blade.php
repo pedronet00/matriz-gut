@@ -47,7 +47,7 @@
           <div class="card-body">
             <h4 style="text-align: center; font-size: 22px;"><b>Forças</b></h4>
             <br/>
-            <textarea id="strength" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px;" class="strength"></textarea>
+            <textarea id="strength" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px; text-align: center;" class="strength"></textarea>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
           <div class="card-body">
             <h4 style="text-align: center; font-size: 22px;"><b>Oportunidades</b></h4>
             <br/>
-            <textarea id="opportunity" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px;" class="opportunity"></textarea>
+            <textarea id="opportunity" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px; text-align: center;" class="opportunity"></textarea>
           </div>
         </div>
       </div>
@@ -74,7 +74,7 @@
           <div class="card-body">
             <h4 style="text-align: center; font-size: 22px;"><b>Ameaças</b></h4>
             <br/>
-            <textarea id="threat" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px;" class="threat"></textarea>
+            <textarea id="threat" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px; text-align: center;" class="threat"></textarea>
           </div>
         </div>
       </div>
