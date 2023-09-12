@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="border-b border-gray-100" style="background-color: #2ecc71;">
+<nav x-data="{ open: false }" class="border-b border-gray-100" style="background-color: #525356;">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -12,16 +12,16 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" style="color: white;">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link href="/project/list" :active="request()->routeIs('project.list')">
+                    <x-nav-link href="/project/list" :active="request()->routeIs('project.list')" style="color: white;">
                         {{ __('Projetos') }}
                     </x-nav-link>
-                    <x-nav-link href="/swot" :active="request()->routeIs('swot.swot')">
+                    <x-nav-link href="/swot" :active="request()->routeIs('swot.swot')" style="color: white;">
                         {{ __('Swot') }}
                     </x-nav-link>  
-                    <x-nav-link href="/dashboard" :active="request()->routeIs('swot.swot')">
+                    <x-nav-link href="/dashboard" :active="request()->routeIs('swot.swot')" style="color: white;">
                         {{ __('Relatórios') }}
                     </x-nav-link> 
                 </div>
