@@ -4,35 +4,6 @@
 @section('content')
 
 
-
-{{-- <h1 style="text-align: center; width: 100%; font-size: 50px; margin-top: 2%;">Projetos</h1> --}}
-
-
-    
-        
-
-{{-- <div class="row row-cols-2 g-3" style="margin-top: 5%; width: 100%; justify-content: center;">
-    @foreach($projects as $project)
-        <div class="col" style="width: 30%; ">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><b>{{$project->projectName}}</b></h5>
-                    <p class="card-text">{{$project->projectDescription}}</p>
-                    <div class="acoes" style="display: flex; margin: auto;">
-                        <a href="/project/{{$project->id}}" class="btn btn-primary" style="background-color: #198754; color: white; border: none;">Saiba Mais</a>
-
-                        <form action="/projects/{{ $project->id}}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-primary" style="background-color: red; color: white;  border: none; margin-left: 15%; ">Deletar</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    @endforeach
-</div> --}}
-
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3" style="width: 90%; margin: 5% auto;">
 
 @foreach($projects as $project)
@@ -53,13 +24,9 @@
 
 </div>
 
-
-
 @if(count($projects) == 0)
     <p>Não há projetos cadastrados!</p>
 @endif
-
-
 
 
  <div id="generic_price_table">   

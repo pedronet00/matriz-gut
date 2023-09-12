@@ -10,15 +10,22 @@ use App\Models\Task;
 class ProjectController extends Controller
 {
     public function index(){
-        
-        $projects = Project::orderBy('Total', 'desc')->take(3)->get();
 
-        return view('welcome', compact('projects'));
+        $user = auth()->user();
+        
+        $projects = $user->projects()
+        ->orderBy('Total', 'desc')
+        ->take(3)
+        ->get();
+
+        return view('dashboard', compact('projects'));
     }
 
     public function projectList(){
-        
-        $projects = Project::all();
+
+        $user = auth()->user();
+
+        $projects = $user->projects;
 
         return view('projects.list', compact('projects'));
     }
@@ -47,9 +54,12 @@ class ProjectController extends Controller
         $project->U = $request->u;
         $project->T = $request->t;
         $project->Total = $request->g + $request->u + $request->t;
-
+    
         $project->save();
-
+    
+        // Associar o usuário atual ao projeto e salvar na tabela project_user
+        auth()->user()->projects()->attach($project->id);
+    
         return redirect('/');
 
     }

@@ -18,6 +18,7 @@ class TaskController extends Controller
         $task->G = $request->g;
         $task->U = $request->u;
         $task->T = $request->t;
+        $task->status = 0;
         $task->project = $projectId;
 
         $total = $request->g + $request->u + $request->t;
@@ -26,7 +27,7 @@ class TaskController extends Controller
 
         $task->save();
 
-        return redirect('/project/{{id}}');
+        return redirect('/project/' . $projectId);
     }
 
     public function taskEnded($taskId){
@@ -38,8 +39,25 @@ class TaskController extends Controller
             $date = date('Y-m-d H:i:s');
             $task->endDate = $date;
             $task->save();
-            // Redirecione de volta para a página anterior ou para onde desejar.
+            
             return redirect()->back()->with('success', 'Tarefa marcada como finalizada com sucesso.');
+        } else {
+            
+            return redirect()->back()->with('error', 'Tarefa não encontrada.');
+        }
+    }
+
+    public function taskDeleted($taskId){
+
+        $task = Task::find($taskId);
+
+        if($task){
+            $task->status = 2;
+            $date = date('Y-m-d H:i:s');
+            $task->endDate = $date;
+            $task->save();
+
+            return redirect()->back()->with('success', 'Tarefa excluída com sucesso.');
         } else {
             // Trate o caso em que a tarefa não foi encontrada.
             return redirect()->back()->with('error', 'Tarefa não encontrada.');

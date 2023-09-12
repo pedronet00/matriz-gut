@@ -1,14 +1,15 @@
 @extends('layouts.main')
 
-@section('title', $project->title)
 
 @section('content')
 
-<h1 style="text-align: center; font-size: 50px;">{{$project->projectName}}</h1>
+<x-app-layout>
 
-<h2 style="text-align: center; margin-top: 5%;">Cadastre uma nova task:</h2>
+<h1 style="text-align: center; font-size: 50px; margin-top: 5%;">{{$project->projectName}}</h1>
 
-<form class="row g-3" style="width: 50%; margin: auto;" method="POST" action="/project/{{$project->id}}/task">
+<h2 style="text-align: center; margin-top: 2%;">Cadastre uma nova task:</h2>
+
+<form class="row g-3" style="width: 50%; margin: 2% auto;" method="POST" action="/project/{{$project->id}}/task">
   @csrf
   <div class="col-md-12">
     <label for="inputEmail4" class="form-label">Tarefa</label>
@@ -34,16 +35,6 @@
 
 
 
-    <div class="col-md-10 offset-md-1">
-        <div class="row">
-            <div class="col-md-6" id="image-container">
-                <img src="/imgs/projects/{{ $project->image}}" class="img-fluid" alt="{{$project->title}}"/>
-            </div>
-            <div id="info-container" class="col-md-6">
-                
-            </div>
-        </div>
-    </div>
 
     <table class="table" style="width: 70%; margin: auto; text-align:center;">
   <thead>
@@ -62,7 +53,7 @@
   <tbody>
   <?php $i = 1;?>
   @foreach($tasks as $task)
-    @if($task->status != 1)
+    @if($task->status == 0)
   
       <tr>
         <th scope="row"><?php echo $i;?></th>
@@ -71,12 +62,14 @@
         <td>{{$task->U}}</td>
         <td>{{$task->T}}</td>
         <td>{{$task->Total}}</td>
-        <td><a href="/project/{{$task->id}}/task/ended"><i class="fa-solid fa-check" style="color: #2b972c;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-trash" style="color: #f52314;"></i></td>
+        <td><a href="/project/{{$task->id}}/task/ended"><i class="fa-solid fa-check" style="color: #2b972c;"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/project/{{$task->id}}/task/deleted"><i class="fa-solid fa-trash" style="color: #f52314;"></i></a></td>
       </tr>
       <?php $i = $i+1;?>
     @endif
   @endforeach
   </tbody>
 </table>
+
+</x-app-layout>
 
 @endsection

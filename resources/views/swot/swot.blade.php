@@ -1,8 +1,11 @@
+
 @extends('layouts.main')
 
 @section('title', 'SWOT')
 
 @section('content')
+
+<x-app-layout>
 
 <style>
   .row {
@@ -32,8 +35,8 @@
     height: 300px;
   }
 </style>
-
-    <h1 style="text-align: center; margin-top: 2%;">Matriz SWOT</h1>
+    <h1 style="text-align: center; margin-top: 2%; font-size: 50px;">Matriz SWOT</h1>
+    <p style="text-align: center; margin-top: 2%;">Utilize esse espaço para escrever as <span style="font-weight: 700; color: grey;">Forças, Fraquezas, Oportunidades e Ameaças</span> de seu negócio!</p>
 
 <div class="swot" style="margin: 2% auto;">
 
@@ -42,32 +45,36 @@
       <div class="col" onload="onload()" style="width: 40%;">
         <div class="card">
           <div class="card-body">
-            <h4>Forças</h4>
-            <textarea id="strength" onchange="changed()" style="width: 100%; height: 300px;" class="strength"></textarea>
+            <h4 style="text-align: center; font-size: 22px;"><b>Forças</b></h4>
+            <br/>
+            <textarea id="strength" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px;" class="strength"></textarea>
           </div>
         </div>
       </div>
       <div class="col" onload="onload()" style="width: 40%;">
         <div class="card">
           <div class="card-body">
-            <h4>Fraquezas</h4>
-            <textarea id="weak" onchange="changed()" style="width: 100%; height: 300px;" class="weak"></textarea>
+            <h4 style="text-align: center; font-size: 22px;"><b>Fraquezas</b></h4>
+            <br/>
+            <textarea id="weak" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px; text-align: center;" class="weak"></textarea>
           </div>
         </div>
       </div>
       <div class="col" onload="onload()" style="width: 40%;">
         <div class="card">
           <div class="card-body">
-            <h4>Oportunidades</h4>
-            <textarea id="opportunity" onchange="changed()" style="width: 100%; height: 300px;" class="opportunity"></textarea>
+            <h4 style="text-align: center; font-size: 22px;"><b>Oportunidades</b></h4>
+            <br/>
+            <textarea id="opportunity" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px;" class="opportunity"></textarea>
           </div>
         </div>
       </div>
       <div class="col" onload="onload()" style="width: 40%;">
         <div class="card">
           <div class="card-body">
-            <h4>Ameaças</h4>
-            <textarea id="threat" onchange="changed()" style="width: 100%; height: 300px;" class="threat"></textarea>
+            <h4 style="text-align: center; font-size: 22px;"><b>Ameaças</b></h4>
+            <br/>
+            <textarea id="threat" onchange="changed()" style="width: 100%; height: 300px; border: none; font-size: 22px;" class="threat"></textarea>
           </div>
         </div>
       </div>
@@ -106,6 +113,6 @@ window.addEventListener('load', function () {
 });
 </script>
 
+</x-app-layout>
 @endsection
-
 
