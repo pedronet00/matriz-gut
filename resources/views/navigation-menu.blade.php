@@ -21,7 +21,7 @@
                     <x-nav-link href="/swot" :active="request()->routeIs('swot.swot')" style="color: white;">
                         {{ __('Swot') }}
                     </x-nav-link>  
-                    <x-nav-link href="/dashboard" :active="request()->routeIs('swot.swot')" style="color: white;">
+                    <x-nav-link href="/report" :active="request()->routeIs('report.report')" style="color: white;">
                         {{ __('Relatórios') }}
                     </x-nav-link> 
                 </div>

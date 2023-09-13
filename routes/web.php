@@ -33,6 +33,10 @@ Route::get('/project/{id}/task/ended', [TaskController::class, 'taskEnded'])->mi
 
 Route::get('/project/{id}/task/deleted', [TaskController::class, 'taskDeleted'])->middleware('auth');
 
+Route::get('/report', function(){
+    return view('report.report');
+})->middleware('auth');
+
 Route::get('/profile/show', function(){ 
     return view('profile.show');})->middleware('auth');
 
